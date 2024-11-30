@@ -1,3 +1,5 @@
-# Lama Dev AI Chat Bot App Starter Setup
+#I've got this project idea to bring you the free and powerful AI ChatBots, which will help you be more productive and creative and give you easy access to the most free and powerful AI.
 
-This template provides a minimal setup to get React 19 working in Vite with HMR and some ESLint rules.
+I built it with much love and practice to bring my idea to life.
+
+It's still in development, but I appreciate your interest!
