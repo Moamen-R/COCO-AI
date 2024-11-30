@@ -5,6 +5,12 @@ import {createBrowserRouter, RouterProvider,} from "react-router-dom";
 import HomePage from "./routes/homepage/HomePage.jsx";
 import RootLayout from "./layouts/RootLayout.jsx";
 import DashboardLayout from "./layouts/dashboardLayout/DashboardLayout.jsx";
+import ChatPage from "./routes/chatpage/ChatPage.jsx";
+import SignInPage from "./routes/signinpage/SignInPage.jsx";
+import SignUpPage from "./routes/signuppage/SignUpPage.jsx";
+import {DevSupport} from "@react-buddy/ide-toolbox";
+import {ComponentPreviews, useInitial} from "./dev/index.js";
+
 
 
 const router = createBrowserRouter([
@@ -16,15 +22,37 @@ const router = createBrowserRouter([
                 element: <HomePage/>
             },
             {
-                path: '/dashboardLayout',
-                element: <DashboardLayout/>
+                path: '/sign-in',
+                element: <SignInPage/>
+            },
+            {
+                path: '/sign-up',
+                element: <SignUpPage/>
+            },
+            {
+                path: '/dashboard',
+                children: [
+                    {
+                        path: '/dashboard',
+                        element: <DashboardLayout/>,
+                    },
+                    {
+                        path: '/dashboard/chats/:id',
+                        element: <ChatPage/>
+                    },
+                ]
             }
         ]
+
     }
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(
     <React.StrictMode>
-        <RouterProvider router={router}/>
+        <DevSupport ComponentPreviews={ComponentPreviews} useInitialHook={useInitial}>
+
+            <RouterProvider router={router}/>
+
+        </DevSupport>
     </React.StrictMode>,
-)
+);

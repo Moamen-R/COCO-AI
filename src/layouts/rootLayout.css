@@ -1,0 +1,42 @@
+.rootLayout{
+    padding: 16px 64px;
+    height: 100vh ;
+    display: flex;
+    flex-direction: column;
+
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .logo{
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: bold;
+            margin-top: 20px;
+
+        img{
+            width: 60px;
+            height: 60px;
+        }
+
+        }
+        .l-text{
+            color: #fff6a9;
+            font-size: 24px;
+            font-weight: bold;
+            border-left: 2px solid #9eff00;
+            padding-left: 10px;
+
+
+
+        }
+
+    }
+    main {
+        flex: 1;
+        overflow: hidden;
+    }
+}
+
