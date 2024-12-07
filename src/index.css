@@ -15,7 +15,7 @@ root {
 }
 
 body {
-    background: linear-gradient(115deg, #000000, #1a1a1a);
+    background: linear-gradient(115deg, #1a1a1a, #072b00);
     color: #ececec;
     font-family: "Funnel Display", sans-serif;
     font-optical-sizing: auto;

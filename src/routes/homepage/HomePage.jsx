@@ -1,8 +1,8 @@
 // eslint-disable-next-line no-unused-vars
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import './homePage.css';
-import {Link} from "react-router-dom";
-import {TypeAnimation} from "react-type-animation";
+import { Link } from "react-router-dom";
+import { TypeAnimation } from "react-type-animation";
 
 class HomePage extends Component {
     render() {
@@ -12,8 +12,7 @@ class HomePage extends Component {
                 <div className="left">
                     <h1>COCO AI</h1>
                     <h2>Super <span>Charge</span> Your Productivity</h2>
-                        <h3>With the most powerful free and new AI models with easy access  </h3>
-
+                    <h3>With the most powerful free and new AI models with easy access</h3>
                     <Link to="/dashboard" className="GStartedBtn">
                         <svg
                             height="24"
@@ -29,28 +28,27 @@ class HomePage extends Component {
                         </svg>
                         <span>Get Started</span>
                     </Link>
-
                 </div>
                 <div className="right">
                     <div className="imgContainer">
                         <div className="bgContainer">
-                            <div className="bg">
-                                <img src="/bg.png" alt="" className=".bg"/>
-                            </div>
+                            <div className="bg"></div>
                         </div>
-                        <img src="/bot3.png" alt="" className="bot"/>
+                        <img src="/bot2.png" alt="" className="bot"/>
                         <div className="chat">
                             <img src="/chatbot.png" alt="" className="chatIcon"/>
                             <TypeAnimation
                                 sequence={[
-                                    "Human: How are you?", // Types 'One'
+                                    "How are you!",
                                     1000,
-                                    "Bot: I'm  fine thanks, How can I help you.", // Deletes 'One' and types 'Two'
-                                    2000, // Waits 2s
-                                    "Human2: I need to learn something new can you help me?",2000, // Waits 2s
+                                    "I'm COCO, Your personal AI platform.",
+                                    2000,
+                                    "I'm not a model for now",
+                                    1000,
+                                    "But I'll provide you with the best AI models.",
+                                    2000,
+                                    "Let's check what I have? ",
                                     3000,
-                                    "Bot: Yes for sure let's do it!",
-                                    1000,// Types 'Three' without deleting 'Two'
                                     () => {
                                         console.log('Sequence completed');
                                     },
@@ -59,9 +57,16 @@ class HomePage extends Component {
                                 cursor={true}
                                 repeat={Infinity}
                                 style={{ fontSize: '1em', display: 'inline-block' }}
-                                omitDeletionAnimation={true}
                             />
                         </div>
+                    </div>
+                </div>
+                <div className="terms">
+                    <img src="/logo.png" alt="" className="btn-logo "/>
+                    <div className="links">
+                        <Link to="/">Terms and Conditions</Link>
+
+                        <Link to="/">Privacy Policy</Link>
                     </div>
                 </div>
             </div>
