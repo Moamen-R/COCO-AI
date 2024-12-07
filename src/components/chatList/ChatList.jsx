@@ -9,10 +9,11 @@ class ChatList extends Component {
             <div className={"chatList"}>
                 <span className={"title"}>DASHBOARD</span>
                 <Link to="/dashboard">Creat a new Chat</Link>
-                <Link to="/">Explore COCO AIt</Link>
+                <Link to="/">Explore COCO AI</Link>
                 <Link to="/dashboard">Contact</Link>
                 <hr />
-                <div>
+                <span className={"title"}>RECENT CHATS</span>
+                <div className={"list"}>
                     <Link to="/">My Chat title</Link>
                     <Link to="/">My Chat title</Link>
                     <Link to="/">My Chat title</Link>

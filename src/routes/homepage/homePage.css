@@ -174,10 +174,16 @@
         align-items: center;
         gap: 5px;
         padding: 9px;
-        background: linear-gradient(115deg, #ffcb00, rgba(72, 255, 0, 0.84));
+
         border-radius: 15px;
-        color: #1e1e1e;
+        color: #ffffff;
         font-size: 0.7em;
+        background: rgba(179, 255, 152, 0.43);
+        box-shadow: 0 8px 32px 0 rgba(220, 255, 0, 0.64);
+        backdrop-filter: blur( 4px );
+        -webkit-backdrop-filter: blur( 4px );
+        border: 1px solid rgba(90, 255, 0, 0.25);
+
 
         @media screen and  (max-width: 1024px) {
             font-size: 0.5em;

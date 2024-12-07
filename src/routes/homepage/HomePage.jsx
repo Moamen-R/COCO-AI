@@ -36,7 +36,7 @@ class HomePage extends Component {
                         </div>
                         <img src="/bot2.png" alt="" className="bot"/>
                         <div className="chat">
-                            <img src="/chatbot.png" alt="" className="chatIcon"/>
+                            <img src="/bot3.png" alt="" className="chatIcon"/>
                             <TypeAnimation
                                 sequence={[
                                     "How are you!",
