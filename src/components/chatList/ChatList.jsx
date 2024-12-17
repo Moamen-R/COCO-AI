@@ -8,7 +8,7 @@ class ChatList extends Component {
         return (
             <div className={"chatList"}>
                 <span className={"title"}>DASHBOARD</span>
-                <Link to="/dashboard">Creat a new Chat</Link>
+                <Link to="/dashboard">New Chat</Link>
                 <Link to="/">Explore COCO AI</Link>
                 <Link to="/dashboard">Contact</Link>
                 <hr />

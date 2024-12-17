@@ -10,6 +10,7 @@ import SignInPage from "./routes/signinpage/SignInPage.jsx";
 import SignUpPage from "./routes/signuppage/SignUpPage.jsx";
 import {DevSupport} from "@react-buddy/ide-toolbox";
 import {ComponentPreviews, useInitial} from "./dev/index.js";
+import DashboardPage from "./routes/dashboard/DashboardPage.jsx";
 
 
 
@@ -31,10 +32,11 @@ const router = createBrowserRouter([
             },
             {
                 path: '/dashboard',
+                element: <DashboardLayout/>,
                 children: [
                     {
                         path: '/dashboard',
-                        element: <DashboardLayout/>,
+                        element: <DashboardPage/>,
                     },
                     {
                         path: '/dashboard/chats/:id',
