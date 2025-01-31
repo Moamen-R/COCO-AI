@@ -1,7 +1,7 @@
 // eslint-disable-next-line no-unused-vars
 import React, { Component } from 'react';
 import './homePage.css';
-import { Link } from "react-router-dom";
+import { Link } from "react-router";
 import { TypeAnimation } from "react-type-animation";
 
 class HomePage extends Component {

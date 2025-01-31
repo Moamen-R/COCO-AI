@@ -1,60 +1,54 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import {createBrowserRouter, RouterProvider,} from "react-router-dom";
+import {createBrowserRouter, RouterProvider} from 'react-router';
 import HomePage from "./routes/homepage/HomePage.jsx";
 import RootLayout from "./layouts/RootLayout.jsx";
 import DashboardLayout from "./layouts/dashboardLayout/DashboardLayout.jsx";
 import ChatPage from "./routes/chatpage/ChatPage.jsx";
 import SignInPage from "./routes/signinpage/SignInPage.jsx";
 import SignUpPage from "./routes/signuppage/SignUpPage.jsx";
-import {DevSupport} from "@react-buddy/ide-toolbox";
-import {ComponentPreviews, useInitial} from "./dev/index.js";
+import {ComponentPreview, DevSupport} from "@react-buddy/ide-toolbox";
 import DashboardPage from "./routes/dashboard/DashboardPage.jsx";
-
-
 
 const router = createBrowserRouter([
     {
-        element: <RootLayout/>,
+        element: <RootLayout />,
         children: [
             {
                 path: '/',
-                element: <HomePage/>
+                element: <HomePage />
             },
             {
                 path: '/sign-in',
-                element: <SignInPage/>
+                element: <SignInPage />
             },
             {
                 path: '/sign-up',
-                element: <SignUpPage/>
+                element: <SignUpPage />
             },
             {
                 path: '/dashboard',
-                element: <DashboardLayout/>,
+                element: <DashboardLayout />,
                 children: [
                     {
                         path: '/dashboard',
-                        element: <DashboardPage/>,
+                        element: <DashboardPage />,
                     },
                     {
                         path: '/dashboard/chats/:id',
-                        element: <ChatPage/>
+                        element: <ChatPage />
                     },
                 ]
             }
         ]
-
     }
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(
     <React.StrictMode>
-        <DevSupport ComponentPreviews={ComponentPreviews} useInitialHook={useInitial}>
-
-            <RouterProvider router={router}/>
-
+        <DevSupport ComponentPreviews={ComponentPreview}>
+            <RouterProvider router={router} />
         </DevSupport>
-    </React.StrictMode>,
+    </React.StrictMode>
 );

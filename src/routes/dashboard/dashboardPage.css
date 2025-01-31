@@ -117,7 +117,7 @@
 
 
 
-button {
+.getStarted-btn {
     background: linear-gradient(115deg, #fff720, #3cd500);
     color: #000000;
     margin-right: 0.11em;
@@ -134,23 +134,23 @@ button {
 
 }
 
-button:hover {
+.getStarted-btn:hover {
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
 }
 
-button:active {
+.getStarted-btn:active {
     transform: scale(0.95);
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
-button svg {
+.getStarted-btn svg {
     width: 18px;
     height: 18px;
     fill: white;
     transition: all 0.3s;
 }
 
-button .svg-wrapper {
+.getStarted-btn .svg-wrapper {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -161,7 +161,7 @@ button .svg-wrapper {
 }
 
 
-button:hover svg {
+.getStarted-btn:hover svg {
     transform: rotate(45deg);
 }
 

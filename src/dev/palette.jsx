@@ -1,4 +1,4 @@
-import {Fragment} from "react"
+import  {Fragment} from "react"
 import {
     Category,
     Component,
@@ -12,7 +12,7 @@ export const PaletteTree = () => (
             <Component name="Loader">
                 <Variant>
                     <ExampleLoaderComponent/>
-                </Variant>
+                </Variant>  
             </Component>
         </Category>
     </Palette>

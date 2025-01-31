@@ -21,7 +21,7 @@ class DashboardPage extends Component {
                            <span>Analyze Image</span>
                        </div>
                         <div className="option">
-                           <img src="/code.gif" alt=""/>
+                           <img src="/code.png" alt=""/>
                            <span>Generate Code</span>
                        </div>
                     </div>
@@ -29,7 +29,7 @@ class DashboardPage extends Component {
                 <div className="form-container">
                     <form>
                         <input type="text" placeholder={"What is on your mind?"} />
-                        <button>
+                        <button className={"getStarted-btn"}>
                             <div className="svg-wrapper-1">
                                 <div className="svg-wrapper">
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
