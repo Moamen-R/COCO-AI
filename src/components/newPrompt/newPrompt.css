@@ -6,7 +6,7 @@
         position: absolute;
         bottom: 0;
         background-color: #234546;
-        border-radius: 20px;
+        border-radius: 20px; 
         display: flex;
         align-items: center;
         gap: 20px;
@@ -25,7 +25,7 @@
 
         button, label{
             border-radius: 50%;
-            background-color: #234546;
+            background-color: #cad000;
             border: none;
             padding: 10px;
             display: flex;
