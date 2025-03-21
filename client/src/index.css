@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&family=Jost:ital,wght@0,100..900;1,100..900&display=swap');
+/*Website color palette*/
+root {
+    --primary-color: #0e0e0e;
+    --secondary-color: #1e1e1e;
+    --element-color:#d79921;
+    --font-color: #fbf1c7;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(115deg, #1a1a1a, #072b00);
+    color: #ececec;
+    font-family: "Funnel Display", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}

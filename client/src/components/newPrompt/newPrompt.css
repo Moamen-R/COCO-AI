@@ -1,0 +1,95 @@
+    .endChat {
+        padding-bottom: 100px;
+    }
+    .newForm {
+        width: 50%;
+        position: absolute;
+        bottom: 0;
+        background-color: #1e2313;
+        border-radius: 20px; 
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        padding: 0 20px;
+        box-shadow: 1px 1px 11px rgba(255, 247, 32, 0.42), -1px -1px 7px rgba(60, 213, 0, 0.3);
+        margin-bottom: 10px;
+        input {
+            flex: 1;
+            padding: 20px;
+            border: none;
+            outline: none;
+            background-color: transparent;
+            color: #fcffdd;
+            font-size: 16px;
+        }
+
+        button, label{
+            border-radius: 40%;
+            background-color: #1a1a1a;
+            border: none;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            margin-right: -10px;
+
+            img {
+                width: 23px;
+                height: 23px;
+                object-fit: cover;
+            }
+        }
+
+    }
+
+
+
+/* Button styles */
+.getStarted-bt {
+    background: linear-gradient(115deg, #fff720, #3cd500);
+    color: #000000;
+    margin-right: 0.11em;
+    padding: 0.8em 0.8em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 18px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s;
+    width: 45px;
+    height: 45px;
+
+}
+
+.getStarted-bt:hover {
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+}
+
+.getStarted-bt:active {
+    transform: scale(0.95);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.getStarted-bt svg {
+    width: 18px;
+    height: 18px;
+    fill: white;
+    transition: all 0.3s;
+}
+
+.getStarted-bt .svg-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    transition: all 0.3s;
+}
+
+
+.getStarted-bt:hover svg {
+    transform: rotate(45deg);
+}

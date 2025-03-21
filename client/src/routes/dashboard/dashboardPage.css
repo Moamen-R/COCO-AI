@@ -1,0 +1,168 @@
+.dashboardPage {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+
+    .texts {
+        flex:1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 50%;
+        gap: 50px;
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            opacity: 0.3;
+
+            .img {
+                width: 64px;
+                height: 64px;
+            }
+            h1 {
+                font-size: 3em;
+                background: linear-gradient(115deg, #c5f9d7, #f7d486, #f27a7d);
+                background-clip: text;
+                -webkit-background-clip: text;
+                color: transparent;
+            }
+        }
+
+        .options {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 60px;
+
+            .option {
+                flex: 1;
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                font-weight: 300;
+                font-size: 0.7em;
+                padding: 20px;
+                border: 1px solid #dcff00;
+                border-radius: 15px;
+
+
+                img {
+                    width: 40px;
+                    height: 40px;
+                }
+            }
+        }
+    }
+
+    .form-container{
+        margin-top: auto;
+        margin-bottom: 15px;
+        width: 50%;
+        display: flex;
+        border-radius: 20px;
+        background-color: rgb(30, 35, 19);
+        height: 50px;
+        box-shadow: 1px 1px 11px rgba(255, 247, 32, 0.42), -1px -1px 7px rgba(60, 213, 0, 0.3);
+
+
+
+        form input::-webkit-input-placeholder { /* Chrome/Safari/Opera */
+            color: rgba(250, 255, 250, 0.41);
+        }
+        form input::-moz-placeholder { /* Firefox */
+            color: rgba(250, 255, 250, 0.41);
+        }
+        form input:-ms-input-placeholder { /* IE/Edge */
+            color: rgba(250, 255, 250, 0.41);
+        }
+
+
+
+        form {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            margin-bottom: 10px;
+
+
+            input {
+                flex: 1;
+                padding: 20px;
+                background-color: transparent;
+                border: none;
+                outline: none;
+                color: rgba(238, 255, 220, 0.87);
+
+            }
+            img{
+                width: 16px;
+                height: 16px;
+            }
+
+        }
+    }
+}
+
+
+
+
+
+
+/* Button styles */
+.getStarted-btn {
+    background: linear-gradient(115deg, #fff720, #3cd500);
+    color: #000000;
+    margin-right: 0.11em;
+    padding: 0.8em 0.8em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 18px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s;
+    width: 45px;
+    height: 45px;
+
+}
+
+.getStarted-btn:hover {
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+}
+
+.getStarted-btn:active {
+    transform: scale(0.95);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.getStarted-btn svg {
+    width: 18px;
+    height: 18px;
+    fill: white;
+    transition: all 0.3s;
+}
+
+.getStarted-btn .svg-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    transition: all 0.3s;
+}
+
+
+.getStarted-btn:hover svg {
+    transform: rotate(45deg);
+}
+
