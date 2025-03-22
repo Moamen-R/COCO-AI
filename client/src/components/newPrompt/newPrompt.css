@@ -32,7 +32,8 @@
             align-items: center;
             justify-content: center;
             cursor: pointer;
-            margin-right: -10px;
+            margin-right: -13px;
+            margin-left: -13px;
 
             img {
                 width: 23px;

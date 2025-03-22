@@ -60,7 +60,7 @@
                <div className="endChat" ref={endRef}></div>
                <form className={"newForm"} onSubmit={handleSubmit}>
                    <Upload setImg={setImg} />
-                   <input type={"file"} id={"file"} multiple={true} hidden={true}/>
+                   <input type={"file"} id={"file"} multiple={true} hidden={true} className="fileInput"/>
                    <input type="text" name="text" placeholder={"What is on your mind?"} />
                    <button className={"getStarted-bt"}> {/*Input Button */}
                        <div className="svg-wrapper-1">
