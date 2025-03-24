@@ -25,19 +25,6 @@
     p,li{
         margin: 10px 0;
     }
-    li{
-        color: #f0ffea;
-    }
-    h1 {
-        color: #b38124;
-        font-size: 22px;
-        font-weight: bold;
-    }
-    h2 {
-        color: #fff6a9;
-        font-size: 18px;
-        font-weight: bold;
-    }
 }
 
 .message {
@@ -46,7 +33,7 @@
 }
 
 .message.user {
-    background: linear-gradient(115deg, #2e2e2e, #033600);
+    background: #191c12;
     border-radius: 20px;
     max-width: 80%;
     align-self: flex-end;
