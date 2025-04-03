@@ -1,4 +1,4 @@
-// eslint-disable-next-line no-unused-vars
+ // eslint-disable-next-line no-unused-vars
 import React, {useEffect, useRef, useState} from 'react';
 import "./newPrompt.css";
 import Upload from "../upload/Upload";
@@ -14,8 +14,25 @@ const NewPrompt = () => {
     const [img,setImg] = useState({
         isLoading:false,
         error: "",
-        dbData:{}
+        dbData:{},
+        aiData:{}
     })
+
+    const chat = model.startChat({
+        history: [
+            {
+                role: "user",
+                parts: [{ text: "Hello, I have 2 dogs in my house." }],
+            },
+            {
+                role: "model",
+                parts: [{ text: "Great to meet you. What would you like to know?" }],
+            },
+        ],
+        generationConfig: {
+            /*maxOutputTokens: 100,*/
+        },
+    });
 
     const endRef = useRef(null);
 
@@ -26,9 +43,20 @@ const NewPrompt = () => {
     const add = async (text)=> {
         setQuestion(text)
 
-        const result = await model.generateContent(text);
-        console.log(result.response.text());
-        setAnswer(result.response.text())
+        const result = await chat.sendMessageStream(
+            Object.entries(img.aiData).length ? [img.aiData,text] : [text]
+        );
+        let accumlatedText = '';
+        for await (const chunk of result.stream) {
+            const chunkText = chunk.text();
+            console.log(chunkText);
+            accumlatedText += chunkText;
+            setAnswer(accumlatedText);
+        }
+        setImg({isLoading:false,
+            error: "",
+            dbData:{},
+            aiData:{}})
     }
 
     const handleSubmit = async (e)=>{
@@ -36,7 +64,7 @@ const NewPrompt = () => {
         const text = e.target.text.value;
         if (!text) return;
 
-        await add(text) // Added the missing await keyword here
+        await add(text)// Added the missing await keyword here
     }
 
     return (

@@ -4,6 +4,18 @@ import "./dashboardPage.css";
 
 class DashboardPage extends Component {
     render() {
+        const handleSubmit = async (e) => {
+            e.preventDefault();
+            const text = e.target.text.value
+            if (!text) return;
+            await fetch(`http://localhost:3000/api/upload`, {
+                method: "POST",
+                headers: {
+                    "content-type": "application/json",
+                },
+                body:JSON.stringify({text})
+            })
+        };
         return (
             <div className={"dashboardPage"}>
                 <div className="texts">
@@ -27,8 +39,8 @@ class DashboardPage extends Component {
                     </div>
                 </div>
                 <div className="form-container">
-                    <form>
-                        <input type="text" placeholder={"What is on your mind?"} />
+                    <form onSubmit={handleSubmit}>
+                        <input type="text" name="text" placeholder={"What is on your mind?"} />
                         <button className={"getStarted-btn"}>
                             <div className="svg-wrapper-1">
                                 <div className="svg-wrapper">
