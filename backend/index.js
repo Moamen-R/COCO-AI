@@ -37,6 +37,9 @@ app.post("/api/chats", (req,res) => {
 })
 
 
+
+
+
 // Function to try starting the server on different ports //
 function startServer(port, maxRetries = 10, attempt = 0) {
     // Check if we've exceeded the maximum number of retries
