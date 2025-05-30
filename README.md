@@ -1,7 +1,7 @@
 <div align="center"><img src=".\client\public\favicon.png" alt="COCO AI Logo" width="150" height="150"/></div>
 
 
-<div align="center"># COCO AI</div>
+<div align="center"><h1>COCO AI</h1> COCO AI</div>
 
 COCO AI is a powerful platform that provides easy access to the latest AI models, allowing you to supercharge your productivity. This application integrates Google's Generative AI (Gemini) with a user-friendly interface for chat-based interactions, image analysis, and more.
 
