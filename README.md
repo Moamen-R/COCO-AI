@@ -1,76 +1,169 @@
+![Project Logo](/logo.png)
+
 # COCO AI
 
-![Project Logo](.\client\public\favicon.png)  
-**Your Gateway to Conversational AI Innovation**
+COCO AI is a powerful platform that provides easy access to the latest AI models, allowing you to supercharge your productivity. This application integrates Google's Generative AI (Gemini) with a user-friendly interface for chat-based interactions, image analysis, and more.
 
-## Table of Contents 📚
+## Project Overview
 
-- [✨ Features](#features-)
-- [🚀 Installation](#installation-)
-- [💡 Usage Examples](#usage-)
-- [⚙️ Tech Stack](#technology-stack-)
-- [🤝 Contributing](#contributing-)
-- [📜 License](#license)
-- [📬 Contact](#contact)
+COCO AI is a full-stack application that allows users to interact with advanced AI models through a clean, intuitive interface. The platform supports text-based conversations, image uploads for analysis, and provides a dashboard for managing multiple AI conversations.
 
-## ✨ Features
+### Key Features
 
-- 🧠 **Multimodal AI** - Combine text & images in conversations
-- 🔐 **Secure Auth** - Powered by Clerk authentication
-- 🖼️ **Image Analysis** - Integrated ImageKit processing
-- 📈 **Conversation History** - MongoDB-backed storage
-- 💅 **Responsive UI** - Optimized for all devices
+- 🤖 **AI Chat Interface**: Engage in conversations with Google's Gemini AI model
+- 🖼️ **Image Analysis**: Upload and analyze images using AI
+- 💻 **Code Generation**: Generate code snippets using AI assistance
+- 🔒 **User Authentication**: Secure login and registration via Clerk
+- 📱 **Responsive Design**: Works across desktop and mobile devices
+- 💾 **Chat History**: Save and revisit previous conversations
 
-## 🚀 Installation
+## Installation
 
-### Full Stack Setup
+### Prerequisites
 
-```bash
-git clone https://github.com/yourusername/COCO-AI.git
-cd COCO-AI
-# Backend
-cd backend && npm install
-cp .env.example .env # Configure environment variables
-# Frontend
-cd ../client && npm install
+- Node.js (v16 or higher)
+- MongoDB database
+- Clerk account for authentication
+- Google Generative AI API key
+- ImageKit account for image handling
+
+### Backend Setup
+
+1. Clone the repository
+   ```bash
+   git clone https://github.com/yourusername/COCO-AI.git
+   cd COCO-AI
+   ```
+
+2. Install backend dependencies
+   ```bash
+   cd backend
+   npm install
+   ```
+
+3. Create a `.env` file in the backend directory with the following variables:
+   ```
+   PORT=3000
+   MONGO=your_mongodb_connection_string
+   CLIENT_URL=http://localhost:5173
+   VITE_IMAGE_KIT_ENDPOINT=your_imagekit_endpoint
+   VITE_IMAGE_KIT_PUBLIC_KEY=your_imagekit_public_key
+   VITE_IMAGE_KIT_PRIVATE_KEY=your_imagekit_private_key
+   ```
+
+4. Start the backend server
+   ```bash
+   npm run start
+   ```
+
+### Frontend Setup
+
+1. Install frontend dependencies
+   ```bash
+   cd ../client
+   npm install
+   ```
+
+2. Create a `.env` file in the client directory with the following variables:
+   ```
+   VITE_CLERK_PUBLISHABLE_KEY=your_clerk_publishable_key
+   VITE_GIMINI_PUPLIC_KEY=your_google_generative_ai_key
+   VITE_IMAGE_KIT_ENDPOINT=your_imagekit_endpoint
+   VITE_IMAGE_KIT_PUBLIC_KEY=your_imagekit_public_key
+   ```
+
+3. Start the frontend development server
+   ```bash
+   npm run dev
+   ```
+
+4. Open your browser and navigate to `http://localhost:5173`
+
+## Usage
+
+### Creating a New Chat
+
+1. Sign in to your account
+2. Navigate to the dashboard
+3. Enter your prompt in the input field and press the send button
+4. The AI will respond to your message
+
+### Uploading Images for Analysis
+
+1. In a chat, click the attachment icon
+2. Select an image from your device
+3. Add a text prompt if needed
+4. Submit to receive AI analysis of the image
+
+### Managing Chat History
+
+Your conversations are automatically saved and can be accessed from the sidebar menu under "RECENT CHATS".
+
+## Project Structure
+
+```
+COCO-AI/
+├── backend/                # Express server
+│   ├── models/             # MongoDB schemas
+│   ├── index.js            # Server entry point
+│   └── package.json        # Backend dependencies
+├── client/                 # React frontend
+│   ├── public/             # Static assets
+│   ├── src/                # Source code
+│   │   ├── components/     # Reusable components
+│   │   ├── layouts/        # Page layouts
+│   │   ├── lib/            # Utility functions
+│   │   ├── routes/         # Application routes
+│   │   └── main.jsx        # Frontend entry point
+│   └── package.json        # Frontend dependencies
+└── AGENT.md               # Development guidelines
 ```
 
-## 💡 Usage Examples
+## Contribution Guidelines
 
-**Multimodal Query:**
+### Setting Up Development Environment
 
-```javascript
-// Example Gemini API interaction
-const response = await model.generateContent([ 
-  { text: "Explain this diagram:" },
-  { image: uploadedImageData },
-]);
-```
+1. Fork the repository
+2. Clone your forked repository
+3. Follow the installation steps above
+4. Create a new branch for your feature or bug fix
 
-## ⚙️ Tech Stack
+### Code Style
 
-| Category     | Technologies               |
-| ------------ | -------------------------- |
-| **Frontend** | React, Vite, ImageKit SDK  |
-| **Backend**  | Node.js, Express, Mongoose |
-| **AI**       | Google Gemini 2.5 Flash    |
-| **Auth**     | Clerk Identity Management  |
-| **Database** | MongoDB Atlas              |
+Please follow these guidelines when contributing:
 
-## 🤝 Contributing
+- **Imports**: ES modules (import/export), sorted by external then internal
+- **Formatting**: Use consistent indentation (2 spaces)
+- **Error Handling**: Use try/catch blocks with specific error handling
+- **Naming**: camelCase for variables/functions, PascalCase for classes/components
+- **Comments**: JSDoc style for function documentation
+- **Authentication**: Use Clerk middleware for protected routes
+- **Async**: Use async/await pattern for asynchronous operations
 
-1. 〰️ Fork the repository
-2. 🛠 Create feature branch (`git checkout -b feature/amazing-feature`)
-3. ✅ Add tests for new features
-4. 📦 Commit changes (`git commit -m 'Add amazing feature'`)
-5. 🚀 Push to branch (`git push origin feature/amazing-feature`)
-6. 🔀 Open a Pull Request
+### Submitting Changes
 
-## 📜 License
+1. Commit your changes with clear, descriptive commit messages
+2. Push to your fork
+3. Submit a pull request with a detailed description of your changes
 
-MIT License - See [LICENSE](LICENSE) for details
+### Reporting Bugs
 
-## 📬 Contact
+If you find a bug, please create an issue with the following information:
 
-📧 Email: [team@coco.ai](mailto:team@coco.ai)  
-🐦 Twitter: [@coco_ai](https://twitter.com/coco_ai)
+- A clear, descriptive title
+- Steps to reproduce the bug
+- Expected behavior
+- Actual behavior
+- Screenshots if applicable
+- Your environment (browser, OS, etc.)
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+---
+
+<div align="center">
+  <img src="/logo.png" alt="COCO AI Logo" width="30" />
+  <p>Made with ❤️ by the COCO AI Team</p>
+</div>
