@@ -1,4 +1,4 @@
-<img src=".\client\public\favicon.png" alt="COCO AI Logo" width="1000" height="1000" />
+<img src=".\client\public\favicon.png" alt="COCO AI Logo" width="600" height="600" />
 
 # COCO AI
 
