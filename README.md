@@ -9,7 +9,7 @@
 <h3>
 COCO AI is a project designed to provide free and powerful AI chatbots. The goal is to help users be more productive and creative by giving them easy access to advanced AI capabilities.
 
-## Features
+## Features ✅
 
 - 🤖 AI Chatbot Integration
 - 💬 Dynamic Prompt Handling
@@ -18,7 +18,7 @@ COCO AI is a project designed to provide free and powerful AI chatbots. The goal
 - 🔑 Clerk Authentication
 - 🧠 Google Generative AI Support
 
-## Installation
+## Installation 💻
 
 To set up the project on your local machine, follow these steps:
 
@@ -52,17 +52,17 @@ To set up the project on your local machine, follow these steps:
    npm run dev
    ```
 
-## Usage
+## Usage 🚀
 
 1. After starting both the backend and frontend servers, navigate to `http://localhost:5173` in your browser.
 2. Use the application to interact with AI chatbots, upload images, and generate responses.
 3. Sign in using the Clerk authentication system.
 
-## Contributing
+## Contributing 🤝
 
 Contributions are welcome! Please follow the coding standards outlined in the `AGENT.md` file.
 
-## Technology Stack
+## Technology Stack ⚙️
 
 - **Backend**: Node.js, Express, Mongoose, ImageKit
 - **Frontend**: React, Vite, React Router, Google Generative AI
@@ -70,7 +70,28 @@ Contributions are welcome! Please follow the coding standards outlined in the `A
 - **Styles**: CSS Modules
 - **Utilities**: ESLint, Prettier
 
-## Additional Information
+## Project Overview 🚀
+
+COCO-AI is an AI-powered platform featuring an interactive chatbot interface with Gemini API integration. It provides:
+
+- Image analysis with ImageKit processing 💡
+- Code generation capabilities ✨
+- Secure authentication via Clerk 🔒
+- Intuitive React-based UI 🎯
+
+The application facilitates multimodal interactions where users can combine images and text.
+
+### Table of Contents
+
+1️⃣ [Features](#features-)
+2️⃣ [Installation](#installation-)
+3️⃣ [Usage](#usage-)
+4️⃣ [Technology Stack](#technology-stack-)
+5️⃣ [Contributing](#contributing-)
+6️⃣ [License](#license)
+7️⃣ [Contact](#contact)
+
+## Features ✅
 
 - This project is still under development.
 - The application does not currently include test cases.
