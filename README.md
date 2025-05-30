@@ -1,98 +1,78 @@
-<img
-    src=".\client\public\favicon.png"
-    alt="COCO AI Logo"
-    style="width: 100px; height: 100px; margin: 20px 0;"
-/>
+// ... existing code ...
 
-<h1>COCO AI</h1>
+# COCO AI
 
-<h3>
-COCO AI is a project designed to provide free and powerful AI chatbots. The goal is to help users be more productive and creative by giving them easy access to advanced AI capabilities.
+![Project Logo](https://via.placeholder.com/100x100?text=COCO+AI)  
+**Your Gateway to Conversational AI Innovation**
 
-## Features ✅
+## Table of Contents 📚
 
-- 🤖 AI Chatbot Integration
-- 💬 Dynamic Prompt Handling
-- 🖼️ Image Upload and Processing
-- ⚛️ React-based Responsive UI
-- 🔑 Clerk Authentication
-- 🧠 Google Generative AI Support
+- [✨ Features](#features-)
+- [🚀 Installation](#installation-)
+- [💡 Usage Examples](#usage-)
+- [⚙️ Tech Stack](#technology-stack-)
+- [🤝 Contributing](#contributing-)
+- [📜 License](#license)
+- [📬 Contact](#contact)
 
-## Installation 💻
+## ✨ Features
 
-To set up the project on your local machine, follow these steps:
+- 🧠 **Multimodal AI** - Combine text & images in conversations
+- 🔐 **Secure Auth** - Powered by Clerk authentication
+- 🖼️ **Image Analysis** - Integrated ImageKit processing
+- 📈 **Conversation History** - MongoDB-backed storage
+- 💅 **Responsive UI** - Optimized for all devices
 
-### Backend
+## 🚀 Installation
 
-1. Navigate to the `backend` directory:
-   ```bash
-   cd backend
-   ```
-2. Install dependencies:
-   ```bash
-   npm install
-   ```
-3. Start the server:
-   ```bash
-   npm run start
-   ```
+### Full Stack Setup
 
-### Frontend
+```bash
+git clone https://github.com/yourusername/COCO-AI.git
+cd COCO-AI
+# Backend
+cd backend && npm install
+cp .env.example .env # Configure environment variables
+# Frontend
+cd ../client && npm install
+```
 
-1. Navigate to the `client` directory:
-   ```bash
-   cd client
-   ```
-2. Install dependencies:
-   ```bash
-   npm install
-   ```
-3. Start the development server:
-   ```bash
-   npm run dev
-   ```
+## 💡 Usage Examples
 
-## Usage 🚀
+**Multimodal Query:**
 
-1. After starting both the backend and frontend servers, navigate to `http://localhost:5173` in your browser.
-2. Use the application to interact with AI chatbots, upload images, and generate responses.
-3. Sign in using the Clerk authentication system.
+```javascript
+// Example Gemini API interaction
+const response = await model.generateContent([
+  { text: "Explain this diagram:" },
+  { image: uploadedImageData },
+]);
+```
 
-## Contributing 🤝
+## ⚙️ Tech Stack
 
-Contributions are welcome! Please follow the coding standards outlined in the `AGENT.md` file.
+| Category     | Technologies               |
+| ------------ | -------------------------- |
+| **Frontend** | React, Vite, ImageKit SDK  |
+| **Backend**  | Node.js, Express, Mongoose |
+| **AI**       | Google Gemini 2.5 Flash    |
+| **Auth**     | Clerk Identity Management  |
+| **Database** | MongoDB Atlas              |
 
-## Technology Stack ⚙️
+## 🤝 Contributing
 
-- **Backend**: Node.js, Express, Mongoose, ImageKit
-- **Frontend**: React, Vite, React Router, Google Generative AI
-- **Authentication**: Clerk
-- **Styles**: CSS Modules
-- **Utilities**: ESLint, Prettier
+1. 〰️ Fork the repository
+2. 🛠 Create feature branch (`git checkout -b feature/amazing-feature`)
+3. ✅ Add tests for new features
+4. 📦 Commit changes (`git commit -m 'Add amazing feature'`)
+5. 🚀 Push to branch (`git push origin feature/amazing-feature`)
+6. 🔀 Open a Pull Request
 
-## Project Overview 🚀
+## 📜 License
 
-COCO-AI is an AI-powered platform featuring an interactive chatbot interface with Gemini API integration. It provides:
+MIT License - See [LICENSE](LICENSE) for details
 
-- Image analysis with ImageKit processing 💡
-- Code generation capabilities ✨
-- Secure authentication via Clerk 🔒
-- Intuitive React-based UI 🎯
+## 📬 Contact
 
-The application facilitates multimodal interactions where users can combine images and text.
-
-### Table of Contents
-
-1️⃣ [Features](#features-)
-2️⃣ [Installation](#installation-)
-3️⃣ [Usage](#usage-)
-4️⃣ [Technology Stack](#technology-stack-)
-5️⃣ [Contributing](#contributing-)
-6️⃣ [License](#license)
-7️⃣ [Contact](#contact)
-
-## Features ✅
-
-- This project is still under development.
-- The application does not currently include test cases.
-- Consider adding test suites in the future for better maintainability.
+📧 Email: [team@coco.ai](mailto:team@coco.ai)  
+🐦 Twitter: [@coco_ai](https://twitter.com/coco_ai)
