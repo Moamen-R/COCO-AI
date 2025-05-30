@@ -43,7 +43,7 @@ cd ../client && npm install
 
 ```javascript
 // Example Gemini API interaction
-const response = await model.generateContent([
+const response = await model.generateContent([ "Hello, how are you?"]);
   { text: "Explain this diagram:" },
   { image: uploadedImageData },
 ]);
