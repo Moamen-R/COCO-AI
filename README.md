@@ -11,12 +11,12 @@ COCO AI is a project designed to provide free and powerful AI chatbots. The goal
 
 ## Features
 
-- AI Chatbot Integration
-- Dynamic Prompt Handling
-- Image Upload and Processing
-- React-based Responsive UI
-- Clerk Authentication
-- Google Generative AI Support
+- 🤖 AI Chatbot Integration
+- 💬 Dynamic Prompt Handling
+- 🖼️ Image Upload and Processing
+- ⚛️ React-based Responsive UI
+- 🔑 Clerk Authentication
+- 🧠 Google Generative AI Support
 
 ## Installation
 
