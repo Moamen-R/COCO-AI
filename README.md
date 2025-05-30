@@ -1,8 +1,6 @@
-// ... existing code ...
-
 # COCO AI
 
-![Project Logo](https://via.placeholder.com/100x100?text=COCO+AI)  
+![Project Logo](\client\public\favicon.png)  
 **Your Gateway to Conversational AI Innovation**
 
 ## Table of Contents 📚
@@ -43,7 +41,7 @@ cd ../client && npm install
 
 ```javascript
 // Example Gemini API interaction
-const response = await model.generateContent([ "Hello, how are you?"]);
+const response = await model.generateContent([ 
   { text: "Explain this diagram:" },
   { image: uploadedImageData },
 ]);
