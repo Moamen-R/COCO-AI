@@ -1,6 +1,6 @@
 # COCO AI
 
-![Project Logo](\client\public\favicon.png)  
+![Project Logo](.\client\public\favicon.png)  
 **Your Gateway to Conversational AI Innovation**
 
 ## Table of Contents 📚
