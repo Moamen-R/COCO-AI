@@ -1,5 +1,5 @@
 <img
-    src="./public/logo.png"
+    src="./public/favicon.png"
     alt="COCO AI Logo"
     style="width: 100px; height: 100px; margin: 20px 0;"
 />
