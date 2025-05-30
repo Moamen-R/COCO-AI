@@ -1,5 +1,5 @@
 <img
-    src="./public/favicon.png"
+    src=".\client\public\favicon.png"
     alt="COCO AI Logo"
     style="width: 100px; height: 100px; margin: 20px 0;"
 />
