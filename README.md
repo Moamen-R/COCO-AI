@@ -1,5 +1,3 @@
-<img src=".\client\public\favicon.png" alt="COCO AI Logo" width="200" height="200" />
-=======
 <div align="center"><img src=".\client\public\favicon.png" alt="COCO AI Logo" width="150" height="150"/></div>
 
 <div align="center"><h1>COCO AI</h1></div>
