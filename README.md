@@ -1,9 +1,6 @@
-<<<<<<< HEAD
 <img src=".\client\public\favicon.png" alt="COCO AI Logo" width="200" height="200" />
 =======
 <div align="center"><img src=".\client\public\favicon.png" alt="COCO AI Logo" width="150" height="150"/></div>
->>>>>>> 895c5de42f78bda299c4a7efdb64970d2f56537f
-
 
 <div align="center"><h1>COCO AI</h1></div>
 
@@ -170,10 +167,5 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 <div align="center">
   <img src=".\client\public\favicon.png" alt="COCO AI Logo" width="40" height="40" />
-<<<<<<< HEAD
-  <p>Made with ❤️ by the COCO AI Team</p>
-</div>
-=======
   <p>Made with ❤️ by the Mo'men Refaey</p>
 </div>
->>>>>>> 895c5de42f78bda299c4a7efdb64970d2f56537f
