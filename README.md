@@ -1,5 +1,5 @@
 
-<div style="justify-content: center;"><img src="./client/public/favicon.png" alt="COCO AI Logo" style="width: 25px;"></div>
+<div style="display: flex; justify-content: center; align-items: center;" ><img src="./client/public/favicon.png" alt="COCO AI Logo"></div>
 
 
 # **COCO AI**
