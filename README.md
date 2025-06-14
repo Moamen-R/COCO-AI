@@ -1,4 +1,4 @@
-<div style="text-align: center;">
+<div style="display: flex; justify-content: center; align-items: center; width: 100%;">
   <img src="./client/public/favicon.png" style="width: 25px;">
 </div>
 
