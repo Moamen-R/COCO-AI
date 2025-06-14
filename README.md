@@ -132,3 +132,43 @@ Your conversations are automatically saved and can be accessed from the sidebar 
 We welcome contributions to COCO AI! Please follow these guidelines to help us maintain a high-quality codebase.
 
 | Type of Contribution | How to Contribute                                  | Guidelines
+
+### Code Style
+
+Please follow these guidelines when contributing:
+
+- **Imports**: ES modules (import/export), sorted by external then internal
+- **Formatting**: Use consistent indentation (2 spaces)
+- **Error Handling**: Use try/catch blocks with specific error handling
+- **Naming**: camelCase for variables/functions, PascalCase for classes/components
+- **Comments**: JSDoc style for function documentation
+- **Authentication**: Use Clerk middleware for protected routes
+- **Async**: Use async/await pattern for asynchronous operations
+
+### Submitting Changes
+
+1. Commit your changes with clear, descriptive commit messages
+2. Push to your fork
+3. Submit a pull request with a detailed description of your changes
+
+### Reporting Bugs
+
+If you find a bug, please create an issue with the following information:
+
+- A clear, descriptive title
+- Steps to reproduce the bug
+- Expected behavior
+- Actual behavior
+- Screenshots if applicable
+- Your environment (browser, OS, etc.)
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+---
+
+<div align="center">
+  <img src="/logo.png" alt="COCO AI Logo" width="30" />
+  <p>Made with ❤️ by the COCO AI Team</p>
+</div>
