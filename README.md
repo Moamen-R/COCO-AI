@@ -1,4 +1,6 @@
+
 <div style="justify-content: center;"><img src="./client/public/favicon.png" alt="COCO AI Logo" style="width: 25px;"></div>
+
 
 # **COCO AI**
 
