@@ -1,5 +1,5 @@
 <div style="text-align: center;">
-  <img src="./client/public/favicon.png">
+  <img src="./client/public/favicon.png" style="width: 25px;">
 </div>
 
 
