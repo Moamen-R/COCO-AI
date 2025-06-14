@@ -169,6 +169,6 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 ---
 
 <div align="center">
-  <img src="/logo.png" alt="COCO AI Logo" width="30" />
-  <p>Made with ❤️ by the COCO AI Team</p>
+  <img src=".\client\public\favicon.png" alt="COCO AI Logo" width="30" />
+  <p>Made with ❤️ by the Mo'men Refaey</p>
 </div>
