@@ -1,10 +1,7 @@
-<div style="display: flex; justify-content: center; align-items: center; width: 100%;">
-  <img src="./client/public/favicon.png" style="width: 25px;">
-</div>
+<div align="center"><img src=".\client\public\favicon.png" alt="COCO AI Logo" width="150" height="150"/></div>
 
 
-
-# **COCO AI**
+<div align="center"><h1>COCO AI</h1></div>
 
 ## Table of Contents
 
