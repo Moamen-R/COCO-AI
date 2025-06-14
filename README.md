@@ -1,4 +1,4 @@
-![Project Logo](.\client\public\favicon.png)
+<img src="./client/public/favicon.png" alt="COCO AI Logo">
 
 # **COCO AI**
 
