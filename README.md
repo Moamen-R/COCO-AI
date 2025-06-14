@@ -1,169 +1,133 @@
-<div align="center"><img src=".\client\public\favicon.png" alt="COCO AI Logo" width="150" height="150"/></div>
+![Project Logo](.\client\public\favicon.png)
 
-<div align="center"><h1>COCO AI</h1></div>
+# **COCO AI**
 
-COCO AI is a powerful platform that provides easy access to the latest AI models, allowing you to supercharge your productivity. This application integrates Google's Generative AI (Gemini) with a user-friendly interface for chat-based interactions, image analysis, and more.
+## Table of Contents
+
+- [Project Overview](#project-overview)
+- [Key Features](#key-features)
+- [Installation](#installation)
+  - [Prerequisites](#prerequisites)
+  - [Backend Setup](#backend-setup)
+  - [Frontend Setup](#frontend-setup)
+- [Usage](#usage)
+  - [Creating a New Chat](#creating-a-new-chat)
+  - [Uploading Images for Analysis](#uploading-images-for-analysis)
+  - [Managing Chat History](#managing-chat-history)
+- [Contribution Guidelines](#contribution-guidelines)
+  - [Setting Up Development Environment](#setting-up-development-environment)
+  - [Code Style](#code-style)
+  - [Submitting Changes](#submitting-changes)
+  - [Reporting Bugs](#reporting-bugs)
+- [License](#license)
 
 ## Project Overview
 
-COCO AI is a full-stack application that allows users to interact with advanced AI models through a clean, intuitive interface. The platform supports text-based conversations, image uploads for analysis, and provides a dashboard for managing multiple AI conversations.
+COCO AI is a powerful platform that provides easy access to the latest AI models, allowing you to supercharge your productivity. This application integrates Google's Generative AI (Gemini) with a user-friendly interface for chat-based interactions, image analysis, and more.
 
-### Key Features
+The project aims to bring free and powerful AI ChatBots to users, helping them to be more productive and creative by providing easy access to the most effective AI models.
 
-- 🤖 **AI Chat Interface**: Engage in conversations with Google's Gemini AI model
-- 🖼️ **Image Analysis**: Upload and analyze images using AI
-- 💻 **Code Generation**: Generate code snippets using AI assistance
-- 🔒 **User Authentication**: Secure login and registration via Clerk
-- 📱 **Responsive Design**: Works across desktop and mobile devices
-- 💾 **Chat History**: Save and revisit previous conversations
+## Key Features
+
+| Feature              | Description                                        | Status       | Emoji |
+| :------------------- | :------------------------------------------------- | :----------- | :---- |
+| **AI Chat Interface**| Engage in conversations with Google's Gemini AI model | ✅ Implemented | 🤖    |
+| **Image Analysis**   | Upload and analyze images using AI                 | ✅ Implemented | 🖼️    |
+| **Code Generation**  | Generate code snippets using AI assistance         | ✅ Implemented | 💻    |
+| **User Authentication**| Secure login and registration via Clerk            | ✅ Implemented | 🔒    |
+| **Responsive Design**| Works across desktop and mobile devices            | ✅ Implemented | 📱    |
+| **Chat History**     | Save and revisit previous conversations            | ✅ Implemented | 💾    |
 
 ## Installation
 
+Follow these steps to set up and install COCO AI on your local machine.
+
 ### Prerequisites
 
-- Node.js (v16 or higher)
-- MongoDB database
-- Clerk account for authentication
-- Google Generative AI API key
-- ImageKit account for image handling
+Ensure you have the following installed:
+
+| Prerequisite          | Version         |
+| :-------------------- | :-------------- |
+| Node.js               | v16 or higher   |
+| MongoDB               | Latest stable   |
+| Clerk Account         | N/A             |
+| Google Generative AI API Key | N/A      |
+| ImageKit Account      | N/A             |
 
 ### Backend Setup
 
-1. Clone the repository
-   ```bash
-   git clone https://github.com/yourusername/COCO-AI.git
-   cd COCO-AI
-   ```
+1.  **Clone the repository**: 
+    ```bash
+    git clone https://github.com/yourusername/COCO-AI.git
+    cd COCO-AI
+    ```
 
-2. Install backend dependencies
-   ```bash
-   cd backend
-   npm install
-   ```
+2.  **Install backend dependencies**:
+    ```bash
+    cd backend
+    npm install
+    ```
 
-3. Create a `.env` file in the backend directory with the following variables:
-   ```
-   PORT=3000
-   MONGO=your_mongodb_connection_string
-   CLIENT_URL=http://localhost:5173
-   VITE_IMAGE_KIT_ENDPOINT=your_imagekit_endpoint
-   VITE_IMAGE_KIT_PUBLIC_KEY=your_imagekit_public_key
-   VITE_IMAGE_KIT_PRIVATE_KEY=your_imagekit_private_key
-   ```
+3.  **Create a `.env` file** in the `backend` directory with the following variables:
+    ```
+    PORT=3000
+    MONGO=your_mongodb_connection_string
+    CLIENT_URL=http://localhost:5173
+    VITE_IMAGE_KIT_ENDPOINT=your_imagekit_endpoint
+    VITE_IMAGE_KIT_PUBLIC_KEY=your_imagekit_public_key
+    VITE_IMAGE_KIT_PRIVATE_KEY=your_imagekit_private_key
+    ```
 
-4. Start the backend server
-   ```bash
-   npm run start
-   ```
+4.  **Start the backend server**:
+    ```bash
+    npm run start
+    ```
 
 ### Frontend Setup
 
-1. Install frontend dependencies
-   ```bash
-   cd ../client
-   npm install
-   ```
+1.  **Install frontend dependencies**:
+    ```bash
+    cd ../client
+    npm install
+    ```
 
-2. Create a `.env` file in the client directory with the following variables:
-   ```
-   VITE_CLERK_PUBLISHABLE_KEY=your_clerk_publishable_key
-   VITE_GIMINI_PUPLIC_KEY=your_google_generative_ai_key
-   VITE_IMAGE_KIT_ENDPOINT=your_imagekit_endpoint
-   VITE_IMAGE_KIT_PUBLIC_KEY=your_imagekit_public_key
-   ```
+2.  **Create a `.env` file** in the `client` directory with the following variables:
+    ```
+    VITE_CLERK_PUBLISHABLE_KEY=your_clerk_publishable_key
+    VITE_GIMINI_PUPLIC_KEY=your_google_generative_ai_key
+    VITE_IMAGE_KIT_ENDPOINT=your_imagekit_endpoint
+    VITE_IMAGE_KIT_PUBLIC_KEY=your_imagekit_public_key
+    ```
 
-3. Start the frontend development server
-   ```bash
-   npm run dev
-   ```
+3.  **Start the frontend development server**:
+    ```bash
+    npm run dev
+    ```
 
-4. Open your browser and navigate to `http://localhost:5173`
+4.  Open your browser and navigate to `http://localhost:5173`.
 
 ## Usage
 
 ### Creating a New Chat
 
-1. Sign in to your account
-2. Navigate to the dashboard
-3. Enter your prompt in the input field and press the send button
-4. The AI will respond to your message
+1.  Sign in to your account. 🔑
+2.  Navigate to the dashboard. 📊
+3.  Enter your prompt in the input field and press the send button. 💬
+4.  The AI will respond to your message. 💡
 
 ### Uploading Images for Analysis
 
-1. In a chat, click the attachment icon
-2. Select an image from your device
-3. Add a text prompt if needed
-4. Submit to receive AI analysis of the image
+1.  In a chat, click the attachment icon. 📎
+2.  Select an image from your device. 📸
+3.  Add a text prompt if needed. ✍️
+4.  Submit to receive AI analysis of the image. 🔍
 
 ### Managing Chat History
 
-Your conversations are automatically saved and can be accessed from the sidebar menu under "RECENT CHATS".
-
-## Project Structure
-
-```
-COCO-AI/
-├── backend/                # Express server
-│   ├── models/             # MongoDB schemas
-│   ├── index.js            # Server entry point
-│   └── package.json        # Backend dependencies
-├── client/                 # React frontend
-│   ├── public/             # Static assets
-│   ├── src/                # Source code
-│   │   ├── components/     # Reusable components
-│   │   ├── layouts/        # Page layouts
-│   │   ├── lib/            # Utility functions
-│   │   ├── routes/         # Application routes
-│   │   └── main.jsx        # Frontend entry point
-│   └── package.json        # Frontend dependencies
-└── AGENT.md               # Development guidelines
-```
+Your conversations are automatically saved and can be accessed from the sidebar menu under "RECENT CHATS". 🕰️
 
 ## Contribution Guidelines
 
-### Setting Up Development Environment
+We welcome contributions to COCO AI! Please follow these guidelines to help us maintain a high-quality codebase.
 
-1. Fork the repository
-2. Clone your forked repository
-3. Follow the installation steps above
-4. Create a new branch for your feature or bug fix
-
-### Code Style
-
-Please follow these guidelines when contributing:
-
-- **Imports**: ES modules (import/export), sorted by external then internal
-- **Formatting**: Use consistent indentation (2 spaces)
-- **Error Handling**: Use try/catch blocks with specific error handling
-- **Naming**: camelCase for variables/functions, PascalCase for classes/components
-- **Comments**: JSDoc style for function documentation
-- **Authentication**: Use Clerk middleware for protected routes
-- **Async**: Use async/await pattern for asynchronous operations
-
-### Submitting Changes
-
-1. Commit your changes with clear, descriptive commit messages
-2. Push to your fork
-3. Submit a pull request with a detailed description of your changes
-
-### Reporting Bugs
-
-If you find a bug, please create an issue with the following information:
-
-- A clear, descriptive title
-- Steps to reproduce the bug
-- Expected behavior
-- Actual behavior
-- Screenshots if applicable
-- Your environment (browser, OS, etc.)
-
-## License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
-
----
-
-<div align="center">
-  <img src=".\client\public\favicon.png" alt="COCO AI Logo" width="40" height="40" />
-  <p>Made with ❤️ by the Mo'men Refaey</p>
-</div>
+| Type of Contribution | How to Contribute                                  | Guidelines
