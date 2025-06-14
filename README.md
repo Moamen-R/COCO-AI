@@ -1,4 +1,4 @@
-<div style="text-align: center;"><img src="./client/public/favicon.png" alt="COCO AI Logo" style="width: 15px;"></div>
+<div style="text-align: center;"><img src="./client/public/favicon.png" alt="COCO AI Logo" style="width: 25px;"></div>
 
 # **COCO AI**
 
