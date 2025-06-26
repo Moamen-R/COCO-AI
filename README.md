@@ -146,7 +146,34 @@ Ensure you have the following installed:
 
 Your conversations are automatically saved and can be accessed from the sidebar menu under "RECENT CHATS". 🕰️
 
-## Contribution Guidelines
+## 📁 Project Structure
+
+```
+.github/
+├── workflows/
+│   └── main_workflow.yml  # CI/CD pipeline for automated testing and deployment
+public/
+├── assets/                # Static assets like images, icons
+src/
+├── components/            # Reusable UI components (e.g., buttons, cards)
+├── pages/                 # Top-level page components (e.g., Home, Dashboard)
+├── services/              # API communication and external service integrations
+├── utils/                 # Utility functions and helpers
+├── App.js                 # Main application component
+├── index.js               # Entry point of the application
+backend/
+├── controllers/           # Handle incoming requests and interact with models
+├── models/                # Define data schemas and interact with the database
+├── routes/                # Define API endpoints
+├── middleware/            # Custom middleware for authentication, error handling
+├── server.js              # Entry point for the backend server
+.env                       # Environment variables (local)
+.gitignore                 # Specifies intentionally untracked files to ignore
+README.md                  # Project documentation
+package.json               # Project dependencies and scripts
+```
+
+## 🤝 Contribution Guidelines
 
 We welcome contributions to COCO AI! Please follow these guidelines to help us maintain a high-quality codebase.
 
@@ -189,6 +216,29 @@ If you find a bug, please create an issue with the following information:
 ## 📄 License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 📞 Contact/Support
+
+For any questions, support, or collaboration inquiries, please reach out to:
+
+-   **Mo'men Refaey** - [GitHub Profile](https://github.com/momenrefaey1)
+-   **Email**: [momen.refaey@icloud.com](mailto:momen.refaey@icloud.com)
+
+## 🛣️ Future Enhancements
+
+We have exciting plans for COCO AI's future development, including:
+
+-   **Multi-model Support**: Integrating more AI models (e.g., DALL-E, GPT-4) for diverse capabilities. 🤖
+-   **Advanced Code Refactoring**: AI-driven refactoring suggestions directly within the IDE. 💡
+-   **Plugin Ecosystem**: Allowing developers to build and share custom plugins for specialized AI tasks. 🧩
+-   **Voice Interface**: Adding voice input capabilities for hands-free interaction. 🎙️
+-   **Offline Mode**: Enabling limited functionality without an internet connection for core tasks. 🔌
+
+Your suggestions and contributions are highly valued!
+
+---
+
+
 
 | 📜 License Details | ✅ Permissions |
 | :---------------- | :------------ |
