@@ -37,14 +37,14 @@ The project aims to bring free and powerful AI ChatBots to users, helping them t
 
 ## Key Features
 
-| Feature              | Description                                        | Status       | Emoji |
-| :------------------- | :------------------------------------------------- | :----------- | :---- |
-| **AI Chat Interface**| Engage in conversations with Google's Gemini AI model | ✅ Implemented | 🤖    |
-| **Image Analysis**   | Upload and analyze images using AI                 | ✅ Implemented | 🖼️    |
-| **Code Generation**  | Generate code snippets using AI assistance         | ✅ Implemented | 💻    |
-| **User Authentication**| Secure login and registration via Clerk            | ✅ Implemented | 🔒    |
-| **Responsive Design**| Works across desktop and mobile devices            | ✅ Implemented | 📱    |
-| **Chat History**     | Save and revisit previous conversations            | ✅ Implemented | 💾    |
+| Feature              | Description                                        | Status       |
+| :------------------- | :------------------------------------------------- | :----------- |
+| **AI Chat Interface**| Engage in conversations with Google's Gemini AI model | ✅ Implemented |
+| **Image Analysis**   | Upload and analyze images using AI                 | ✅ Implemented |
+| **Code Generation**  | Generate code snippets using AI assistance         | ✅ Implemented |
+| **User Authentication**| Secure login and registration via Clerk            | ✅ Implemented |
+| **Responsive Design**| Works across desktop and mobile devices            | ✅ Implemented |
+| **Chat History**     | Save and revisit previous conversations            | ✅ Implemented | 
 
 ## 🔧 Installation
 
