@@ -222,7 +222,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 For any questions, support, or collaboration inquiries, please reach out to:
 
 -   **Mo'men Refaey** - [GitHub Profile](https://github.com/momenrefaey1)
--   **Email**: [momen.refaey@icloud.com](mailto:momen.refaey@icloud.com)
+-   **Email**: [moamen.refaey.dev@gmail.com](mailto:moamen.refaey.dev@gmail.com)
 
 ## 🛣️ Future Enhancements
 
