@@ -122,6 +122,88 @@ app.post("/api/chats", requireAuth(), async (req, res) => {
     }
 });
 
+// PROTECTED route for fetching user's chat list
+app.get("/api/userchats", requireAuth(), async (req, res) => {
+    const userId = req.auth?.userId;
+
+    if (!userId) {
+        return res.status(401).send("Authentication failed.");
+    }
+
+    try {
+        const userChats = await UserChats.findOne({ userId: userId });
+        if (!userChats) {
+            return res.status(200).send([]);
+        }
+        res.status(200).send(userChats.chats);
+    } catch (err) {
+        console.error("Error fetching user chats:", err);
+        res.status(500).send("Error Fetching User Chats!");
+    }
+});
+
+// PROTECTED route for fetching a specific chat by ID
+app.get("/api/chats/:id", requireAuth(), async (req, res) => {
+    const userId = req.auth?.userId;
+
+    if (!userId) {
+        return res.status(401).send("Authentication failed.");
+    }
+
+    try {
+        const chat = await Chat.findOne({ _id: req.params.id, userId: userId });
+        if (!chat) {
+            return res.status(404).send("Chat not found.");
+        }
+        res.status(200).send(chat);
+    } catch (err) {
+        console.error("Error fetching chat:", err);
+        res.status(500).send("Error Fetching Chat!");
+    }
+});
+
+// PROTECTED route for updating chat history
+app.put("/api/chats/:id", requireAuth(), async (req, res) => {
+    const userId = req.auth?.userId;
+    const { question, answer, img } = req.body;
+
+    if (!userId) {
+        return res.status(401).send("Authentication failed.");
+    }
+
+    if (!question || typeof question !== 'string' || question.trim() === '') {
+        return res.status(400).send("Question text cannot be empty.");
+    }
+
+    try {
+        const newItems = [
+            ...(img ? [{ role: "user", parts: [{ text: question }], img }] : [{ role: "user", parts: [{ text: question }] }]),
+            { role: "model", parts: [{ text: answer }] },
+        ];
+
+        const updatedChat = await Chat.findOneAndUpdate(
+            { _id: req.params.id, userId: userId },
+            {
+                $push: {
+                    history: {
+                        $each: newItems,
+                    },
+                },
+            },
+            { new: true }
+        );
+
+        if (!updatedChat) {
+            return res.status(404).send("Chat not found.");
+        }
+
+        res.status(200).send(updatedChat);
+    } catch (err) {
+        console.error("Error updating chat:", err);
+        res.status(500).send("Error Updating Chat!");
+    }
+});
+
 // Example protected route (kept from your original code)
 app.get('/protected', requireAuth({ signInUrl: '/sign-in' }), (req, res) => {
     res.send(`This is a protected route. User ID: ${req.auth.userId}`);

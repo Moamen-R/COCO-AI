@@ -6,9 +6,6 @@ import { Link } from "react-router";
 import { TypeAnimation } from "react-type-animation";
 
 const HomePage = () => {
-    const test = async () =>{
-        await fetch("http://localhost:3000/api/test",)
-    }
     return (
         <div className="homepage">
             <img src="/circle.png" alt="" className="orbital"/>
@@ -31,7 +28,6 @@ const HomePage = () => {
                     </svg>
                     <span>Get Started</span>
                 </Link>
-                <button onClick={test}>Test</button>
             </div>
             <div className="right">
                 <div className="imgContainer">
