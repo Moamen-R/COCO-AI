@@ -15,6 +15,11 @@
   - [Creating a New Chat](#creating-a-new-chat)
   - [Uploading Images for Analysis](#uploading-images-for-analysis)
   - [Managing Chat History](#managing-chat-history)
+- [Deployment](#deployment)
+  - [Building for Production](#building-for-production)
+  - [Environment Variables for Production](#environment-variables-for-production)
+  - [Deploying the Backend](#deploying-the-backend)
+  - [Deploying the Frontend](#deploying-the-frontend)
 - [Contribution Guidelines](#contribution-guidelines)
   - [Setting Up Development Environment](#setting-up-development-environment)
   - [Code Style](#code-style)
@@ -172,6 +177,109 @@ backend/
 README.md                  # Project documentation
 package.json               # Project dependencies and scripts
 ```
+
+## 🚀 Deployment
+
+After setting up the project locally, follow these steps to deploy COCO AI to production.
+
+### Building for Production
+
+1.  **Build the frontend**:
+    ```bash
+    cd client
+    npm run build
+    ```
+    This creates an optimized production bundle in the `client/dist` directory.
+
+2.  **Backend production start**:
+    The backend includes a production start script that uses `node` instead of `nodemon`:
+    ```bash
+    cd backend
+    npm run start:prod
+    ```
+
+### Environment Variables for Production
+
+Set the following environment variables on your hosting platform. **Do not commit `.env` files with real credentials to your repository.**
+
+| Variable | Where | Description |
+| :------- | :---- | :---------- |
+| `PORT` | Backend | Server port (default: `3000`) |
+| `MONGO` | Backend | MongoDB Atlas connection string |
+| `CLIENT_URL` | Backend | Deployed frontend URL (e.g., `https://your-app.vercel.app`) |
+| `CLERK_SECRET_KEY` | Backend | Clerk secret key from your Clerk dashboard |
+| `CLERK_PUBLISHABLE_KEY` | Backend | Clerk publishable key |
+| `VITE_IMAGE_KIT_ENDPOINT` | Backend | ImageKit URL endpoint |
+| `VITE_IMAGE_KIT_PUBLIC_KEY` | Backend | ImageKit public key |
+| `VITE_IMAGE_KIT_PRIVATE_KEY` | Backend | ImageKit private key |
+| `VITE_CLERK_PUBLISHABLE_KEY` | Frontend | Clerk publishable key |
+| `VITE_GIMINI_PUPLIC_KEY` | Frontend | Google Generative AI API key |
+| `VITE_IMAGE_KIT_ENDPOINT` | Frontend | ImageKit URL endpoint |
+| `VITE_IMAGE_KIT_PUBLIC_KEY` | Frontend | ImageKit public key |
+| `VITE_API_URL` | Frontend | Deployed backend URL (e.g., `https://your-api.onrender.com`) |
+
+### Deploying the Backend
+
+The backend can be deployed to any Node.js hosting platform. Below are instructions for popular options.
+
+#### Option A: Render
+
+1.  Create a new **Web Service** on [Render](https://render.com).
+2.  Connect your GitHub repository.
+3.  Set the following:
+    -   **Root Directory**: `backend`
+    -   **Build Command**: `npm install`
+    -   **Start Command**: `npm run start:prod`
+4.  Add all backend environment variables in the **Environment** tab.
+5.  Deploy the service.
+
+#### Option B: Railway
+
+1.  Create a new project on [Railway](https://railway.app).
+2.  Connect your GitHub repository.
+3.  Set the **Root Directory** to `backend`.
+4.  Add all backend environment variables in **Variables**.
+5.  Railway auto-detects the start command from `package.json`.
+
+### Deploying the Frontend
+
+The React frontend can be deployed to any static hosting platform.
+
+#### Option A: Vercel
+
+1.  Import your repository on [Vercel](https://vercel.com).
+2.  Set the following:
+    -   **Root Directory**: `client`
+    -   **Build Command**: `npm run build`
+    -   **Output Directory**: `dist`
+    -   **Install Command**: `npm install --legacy-peer-deps`
+3.  Add all frontend environment variables in **Settings > Environment Variables**.
+4.  Deploy.
+
+#### Option B: Netlify
+
+1.  Create a new site on [Netlify](https://www.netlify.com).
+2.  Connect your GitHub repository.
+3.  Set the following:
+    -   **Base directory**: `client`
+    -   **Build command**: `npm run build`
+    -   **Publish directory**: `client/dist`
+4.  Add all frontend environment variables in **Site settings > Environment variables**.
+5.  For single-page app routing, create a `client/public/_redirects` file with:
+    ```
+    /*    /index.html   200
+    ```
+6.  Deploy.
+
+### Post-Deployment Checklist
+
+| Step | Action |
+| :--- | :----- |
+| 1 | Update `CLIENT_URL` in the backend to match the deployed frontend URL |
+| 2 | Update `VITE_API_URL` in the frontend to match the deployed backend URL |
+| 3 | Add the deployed frontend URL to your Clerk dashboard under **Allowed Origins** |
+| 4 | Verify CORS is working by testing API calls from the frontend |
+| 5 | Confirm MongoDB Atlas allows connections from your backend host's IP (or use `0.0.0.0/0` for testing) |
 
 ## 🤝 Contribution Guidelines
 
