@@ -38,8 +38,8 @@ const ChatPage = () => {
                  <div className="chatting">
                     {loading
                         ? "Loading..."
-                        : chat?.history?.map((message, i) => (
-                            <React.Fragment key={i}>
+                        : chat?.history?.map((message) => (
+                            <React.Fragment key={message._id}>
                                 {message.img && (
                                     <IKImage
                                         urlEndpoint={import.meta.env.VITE_IMAGE_KIT_ENDPOINT}

@@ -41,11 +41,11 @@ const NewPrompt = ({ chatId, chat: chatData }) => {
         const result = await chat.sendMessageStream(
             Object.entries(img.aiData).length ? [img.aiData,text] : [text]
         );
-        let accumlatedText = '';
+        let accumulatedText = '';
         for await (const chunk of result.stream) {
             const chunkText = chunk.text();
-            accumlatedText += chunkText;
-            setAnswer(accumlatedText);
+            accumulatedText += chunkText;
+            setAnswer(accumulatedText);
         }
 
         try {
@@ -57,7 +57,7 @@ const NewPrompt = ({ chatId, chat: chatData }) => {
                 },
                 body: JSON.stringify({
                     question: text,
-                    answer: accumlatedText,
+                    answer: accumulatedText,
                     ...(img.dbData?.filePath && { img: img.dbData.filePath }),
                 }),
             });
@@ -76,8 +76,8 @@ const NewPrompt = ({ chatId, chat: chatData }) => {
         const text = e.target.text.value;
         if (!text) return;
 
-        formRef.current.reset();
         await add(text)
+        formRef.current.reset();
     }
 
     return (

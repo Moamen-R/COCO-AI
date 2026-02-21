@@ -176,10 +176,11 @@ app.put("/api/chats/:id", requireAuth(), async (req, res) => {
     }
 
     try {
-        const newItems = [
-            ...(img ? [{ role: "user", parts: [{ text: question }], img }] : [{ role: "user", parts: [{ text: question }] }]),
-            { role: "model", parts: [{ text: answer }] },
-        ];
+        const userMessage = { role: "user", parts: [{ text: question }] };
+        if (img) {
+            userMessage.img = img;
+        }
+        const newItems = [userMessage, { role: "model", parts: [{ text: answer }] }];
 
         const updatedChat = await Chat.findOneAndUpdate(
             { _id: req.params.id, userId: userId },
