@@ -1,24 +1,34 @@
 // eslint-disable-next-line no-unused-vars
 import React from 'react';
 import "./dashboardPage.css";
-import {useAuth} from "@clerk/clerk-react";
+import {useNavigate} from "react-router";
 
 const DashboardPage = () => {
 
-    const {userId} = useAuth()
+    const navigate = useNavigate();
     const handleSubmit = async (e) => {
         e.preventDefault();
         const text = e.target.text.value;
         if (!text) return;
 
-        await fetch("http://localhost:3000/api/chats", {
-            method: "POST",
-            credentials: "include",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({ text })
-        });
+        try {
+            const res = await fetch("http://localhost:3000/api/chats", {
+                method: "POST",
+                credentials: "include",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({ text })
+            });
+
+            const data = await res.json();
+
+            if (res.ok) {
+                navigate(`/dashboard/chats/${data.chatId}`);
+            }
+        } catch (err) {
+            console.error("Error creating chat:", err);
+        }
     };
 
     return (

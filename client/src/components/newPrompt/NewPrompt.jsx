@@ -6,7 +6,7 @@ import {IKImage} from "imagekitio-react";
 import model from "../../lib/gemini.js";
 import Markdown from "react-markdown";
 
-const NewPrompt = () => {
+const NewPrompt = ({ chatId, chat: chatData }) => {
 
     const [question, setQuestion] = useState("");
     const [answer, setAnswer] = useState("");
@@ -19,22 +19,17 @@ const NewPrompt = () => {
     })
 
     const chat = model.startChat({
-        history: [
-            {
-                role: "user",
-                parts: [{ text: "Hello, I have 2 dogs in my house." }],
-            },
-            {
-                role: "model",
-                parts: [{ text: "Great to meet you. What would you like to know?" }],
-            },
-        ],
+        history: chatData?.history?.map(({ role, parts }) => ({
+            role,
+            parts: [{ text: parts[0].text }],
+        })) || [],
         generationConfig: {
             /*maxOutputTokens: 100,*/
         },
     });
 
     const endRef = useRef(null);
+    const formRef = useRef(null);
 
     useEffect(() => {
         endRef.current.scrollIntoView({ behavior: "smooth" });
@@ -46,13 +41,30 @@ const NewPrompt = () => {
         const result = await chat.sendMessageStream(
             Object.entries(img.aiData).length ? [img.aiData,text] : [text]
         );
-        let accumlatedText = '';
+        let accumulatedText = '';
         for await (const chunk of result.stream) {
             const chunkText = chunk.text();
-            console.log(chunkText);
-            accumlatedText += chunkText;
-            setAnswer(accumlatedText);
+            accumulatedText += chunkText;
+            setAnswer(accumulatedText);
         }
+
+        try {
+            await fetch(`http://localhost:3000/api/chats/${chatId}`, {
+                method: "PUT",
+                credentials: "include",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                    question: text,
+                    answer: accumulatedText,
+                    ...(img.dbData?.filePath && { img: img.dbData.filePath }),
+                }),
+            });
+        } catch (err) {
+            console.error("Error saving chat:", err);
+        }
+
         setImg({isLoading:false,
             error: "",
             dbData:{},
@@ -64,7 +76,8 @@ const NewPrompt = () => {
         const text = e.target.text.value;
         if (!text) return;
 
-        await add(text)// Added the missing await keyword here
+        await add(text)
+        formRef.current.reset();
     }
 
     return (
@@ -84,7 +97,7 @@ const NewPrompt = () => {
             {question && <div className='message'><Markdown>{answer}</Markdown></div>}
 
             <div className="endChat" ref={endRef}></div>
-            <form className={"newForm"} onSubmit={handleSubmit}>
+            <form className={"newForm"} onSubmit={handleSubmit} ref={formRef}>
                 <Upload setImg={setImg} />
                 <input type={"file"} id={"file"} multiple={true} hidden={true} className="fileInput"/>
                 <input type="text" name="text" placeholder={"What is on your mind?"} />
